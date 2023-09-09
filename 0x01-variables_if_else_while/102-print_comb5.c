@@ -2,38 +2,35 @@
 
 /**
  * main - Entry point
- * Description: Write a program that print all possible different combinations 
- * Return: 0
- */
+ *
+ * Description: Write a program that print all possible different combinations
+ *
+ * Return: Always 0 (Success)
+*/
 
 int main(void)
 {
-	int firstDigit = 0, seconDigit;
+	int i, k;
 
-	while (firstDigit <= 99)
+	for (i = 0; i < 100; i++)
 	{
-		seconDigit = firstDigit;
-		while (seconDigit <= 99)
+		for (k = 0; k < 100; k++)
 		{
-			if (seconDigit != firstDigit)
+			if (i < k)
 			{
-				putchar((firstDigit / 10) + 48);
-				putchar((firstDigit % 10) + 48);
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
 				putchar(' ');
-				putchar((seconDigit / 10) + 48);
-				putchar((seconDigit % 10) + 48);
-
-				if (firstDigit != 98 || seconDigit != 99)
+				putchar((k / 10) + 48);
+				putchar((k % 10) + 48);
+				if (i != 98 || k != 99)
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
-			seconDigit++;
 		}
-		firstDigit++;
 	}
-	putchar('/n');
-
+	putchar('\n');
 	return (0);
 }
